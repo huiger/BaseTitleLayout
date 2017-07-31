@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/activity_main"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.huige.basetitlelayout.MainActivity"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <com.huige.library.BaseTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleLeftText1="返回"
+        android:background="#000"
+        app:titleTextColor="#fff"
+        app:titleContentText="测试一下"/>
+
+
+    <com.huige.library.BaseTitleLayout
+        android:id="@+id/titleLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        app:titleRightImg1="@mipmap/download"
+        android:background="#ADADAD"
+        app:titleTextColor="#e20000"
+        app:titleRightImg2="@mipmap/my_collect_icon"
+        app:titleContentText="测试一下测试一下测试一下测试一下测试一下"/>
+
+</LinearLayout>
