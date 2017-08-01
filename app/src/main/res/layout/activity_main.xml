@@ -28,7 +28,7 @@
         app:titleRightImg1="@mipmap/download"
         android:background="#ADADAD"
         app:titleTextColor="#e20000"
-        app:titleRightImg2="@mipmap/my_collect_icon"
+        app:titleRightImg2="@mipmap/collect_icon"
         app:titleContentText="测试一下测试一下测试一下测试一下测试一下"/>
 
 </LinearLayout>
