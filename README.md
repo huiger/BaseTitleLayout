@@ -3,6 +3,9 @@
 
 [![](https://jitpack.io/v/huigeAndroid/BaseTitleLayout.svg)](https://jitpack.io/#huigeAndroid/BaseTitleLayout)
 
+## 效果图
+![效果图](./img/img.png)
+
 ## Gradle Dependency
 ```
 allprojects {
