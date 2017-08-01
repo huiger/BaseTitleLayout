@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.huigeAndroid:BaseTitleLayout:v1.0'
+     compile 'com.github.huigeAndroid:BaseTitleLayout:v1.0.1'
 }
 ```
 
@@ -29,7 +29,7 @@ dependencies {
         android:background="#ADADAD"
         app:titleTextColor="#e20000"
         app:titleRightImg2="@mipmap/image2"
-        app:titleContentText="测试一下测试一下测试一下测试一下测试一下"/>
+        app:titleCenterText="测试一下测试一下测试一下测试一下测试一下"/>
 ```
 
 ## 监听
@@ -68,7 +68,7 @@ titleLayout.setOnTitleClickListener(new TitleLayoutClickListener() {
 | titleTextSize    | dimension |
 | titleLeftImg     | reference |
 | titleLeftText1   | string    |
-| titleContentText | string    |
+| titleCenterText  | string    |
 | titleRightImg1   | reference |
 | titleRightImg2   | reference |
 | titleRightText   | string    |
