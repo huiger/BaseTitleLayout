@@ -17,7 +17,7 @@
         app:titleLeftText1="返回"
         android:background="#000"
         app:titleTextColor="#fff"
-        app:titleContentText="测试一下"/>
+        app:titleCenterText="测试一下"/>
 
 
     <com.huige.library.BaseTitleLayout
@@ -29,6 +29,6 @@
         android:background="#ADADAD"
         app:titleTextColor="#e20000"
         app:titleRightImg2="@mipmap/collect_icon"
-        app:titleContentText="测试一下测试一下测试一下测试一下测试一下"/>
+        app:titleCenterText="测试一下测试一下测试一下测试一下测试一下"/>
 
 </LinearLayout>

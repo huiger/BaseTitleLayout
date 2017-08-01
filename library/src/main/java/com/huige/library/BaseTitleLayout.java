@@ -34,7 +34,7 @@ public class BaseTitleLayout extends View {
     private int leftImg = R.drawable.back;
     private int textSize = dp2px(12);
     private String leftText = "";
-    private String contentText = "";
+    private String centerText = "";
     private int rightImg1 = -1, rightImg2 = -1;
     private String rightText = "";
     private Bitmap leftBitmap;
@@ -76,8 +76,8 @@ public class BaseTitleLayout extends View {
             } else if (index == R.styleable.BaseTitleLayout_titleLeftText1) {
                 leftText = typedArray.getString(index);
 
-            } else if (index == R.styleable.BaseTitleLayout_titleContentText) {
-                contentText = typedArray.getString(index);
+            } else if (index == R.styleable.BaseTitleLayout_titleCenterText) {
+                centerText = typedArray.getString(index);
 
             } else if (index == R.styleable.BaseTitleLayout_titleRightImg1) {
                 rightImg1 = typedArray.getResourceId(index, -1);
@@ -96,6 +96,7 @@ public class BaseTitleLayout extends View {
 
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setColor(textColor);
+        mPaint.setTextSize(dp2px(12));
         mPaint.setTextAlign(Paint.Align.CENTER);
         // 绘制图片范围
         rect = new Rect();
@@ -116,22 +117,20 @@ public class BaseTitleLayout extends View {
 
 
         Paint.FontMetrics fontMetrics = mPaint.getFontMetrics();
-        float textContentHeight = getHeight() / 2 - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent)/2;
-
+        float textCenterHeight = getHeight() / 2 - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent)/2;
+        
         if (!TextUtils.isEmpty(leftText)) {
-            mPaint.setTextSize(dp2px(12));
-            mCanvas.drawText(leftText, paddingLeft + (iconSize + dp2px(5)), textContentHeight, mPaint);
+            mCanvas.drawText(leftText, paddingLeft + (iconSize + dp2px(5)), textCenterHeight, mPaint);
         }
 
-
-        if (!TextUtils.isEmpty(contentText)) {
-            if (mPaint.measureText(contentText) > layoutWidth / 3) {
+        if (!TextUtils.isEmpty(centerText)) {
+            mPaint.setTextSize(textSize);
+            if (mPaint.measureText(centerText) > layoutWidth / 3) {
                 TextPaint textPaint = new TextPaint(mPaint);
-                String str = TextUtils.ellipsize(contentText, textPaint, layoutWidth / 2, TextUtils.TruncateAt.END).toString();
-                mCanvas.drawText(str, layoutWidth / 2, textContentHeight, textPaint);
+                String str = TextUtils.ellipsize(centerText, textPaint, layoutWidth / 2, TextUtils.TruncateAt.END).toString();
+                mCanvas.drawText(str, layoutWidth / 2, textCenterHeight, textPaint);
             } else {
-                mPaint.setTextSize(textSize);
-                mCanvas.drawText(contentText, layoutWidth / 2, textContentHeight, mPaint);
+                mCanvas.drawText(centerText, layoutWidth / 2, textCenterHeight, mPaint);
             }
         }
 
@@ -152,7 +151,7 @@ public class BaseTitleLayout extends View {
 
         if (!TextUtils.isEmpty(rightText)) {
             mCanvas.drawText(rightText, layoutWidth - paddingRight + mPaint.measureText(rightText),
-                    textContentHeight, mPaint);
+                    textCenterHeight, mPaint);
         }
 
     }
@@ -167,9 +166,9 @@ public class BaseTitleLayout extends View {
         invalidate();
     }
 
-    public void setContentText(String str) {
+    public void setCenterText(String str) {
         if (TextUtils.isEmpty(str)) return;
-        this.contentText = str;
+        this.centerText = str;
         invalidate();
     }
 
@@ -231,12 +230,6 @@ public class BaseTitleLayout extends View {
             }
         }
         return true;
-    }
-
-    private float getFontHeight(Paint paint, String str) {
-        Rect rect = new Rect();
-        paint.getTextBounds(str, 0, str.length(), rect);
-        return rect.height();
     }
 
     private int dp2px(float dp) {

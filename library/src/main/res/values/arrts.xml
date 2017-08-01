@@ -6,7 +6,7 @@
         <attr name="titleIconSize" format="dimension"/>
         <attr name="titleLeftImg" format="reference"/>
         <attr name="titleLeftText1" format="string"/>
-        <attr name="titleContentText" format="string"/>
+        <attr name="titleCenterText" format="string"/>
         <attr name="titleRightImg1" format="reference"/>
         <attr name="titleRightImg2" format="reference"/>
         <attr name="titleRightText" format="string"/>
