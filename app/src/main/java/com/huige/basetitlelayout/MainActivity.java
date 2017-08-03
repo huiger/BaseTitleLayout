@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
 
         titleLayout2 = (BaseTitleLayout) findViewById(R.id.titleLayout2);
 
-
         titleLayout2.setLeftText("返回");
 
         titleLayout2.setOnTitleClickListener(new TitleLayoutClickListener() {
