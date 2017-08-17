@@ -17,6 +17,7 @@
         app:titleLeftText="返回"
         android:background="#000"
         app:titleTextColor="#fff"
+        app:titleRightText="add"
         app:titleCenterText="测试一下"/>
 
 

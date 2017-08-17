@@ -162,7 +162,7 @@ public class BaseTitleLayout extends View {
         }
 
         if (!TextUtils.isEmpty(rightText)) {
-            mCanvas.drawText(rightText, layoutWidth - paddingRight + mPaint.measureText(rightText),
+            mCanvas.drawText(rightText, layoutWidth - paddingRight - mPaint.measureText(rightText),
                     textCenterHeight, mPaint);
         }
 
