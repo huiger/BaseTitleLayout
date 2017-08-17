@@ -1,7 +1,7 @@
 # BaseTitleLayout
 
 
-[![](https://jitpack.io/v/huigeAndroid/BaseTitleLayout.svg)](https://jitpack.io/#huigeAndroid/BaseTitleLayout)
+[![](https://jitpack.io/v/huigeAndroid/BaseTitleLayout.svg)](https://jitpack.io/#huiger/BaseTitleLayout)
 
 ## 效果图
 ![效果图](./img/img.png)
