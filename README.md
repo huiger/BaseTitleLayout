@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.huiger:BaseTitleLayout:v1.0.1'
+     compile 'com.github.huiger:BaseTitleLayout:v1.2'
 }
 ```
 
@@ -67,7 +67,8 @@ titleLayout.setOnTitleClickListener(new TitleLayoutClickListener() {
 | titleTextColor   | color     |
 | titleTextSize    | dimension |
 | titleLeftImg     | reference |
-| titleLeftText1   | string    |
+| titleLeftImgVisible     | enum |
+| titleLeftText    | string    |
 | titleCenterText  | string    |
 | titleRightImg1   | reference |
 | titleRightImg2   | reference |
