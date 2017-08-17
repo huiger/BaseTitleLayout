@@ -14,7 +14,7 @@
     <com.huige.library.BaseTitleLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleLeftText1="返回"
+        app:titleLeftText="返回"
         android:background="#000"
         app:titleTextColor="#fff"
         app:titleCenterText="测试一下"/>
@@ -30,5 +30,12 @@
         app:titleTextColor="#e20000"
         app:titleRightImg2="@mipmap/collect_icon"
         app:titleCenterText="测试一下测试一下测试一下测试一下测试一下"/>
+
+    <com.huige.library.BaseTitleLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleCenterText="测试无LeftImg"
+        app:titleLeftImgVisible="GONE"
+        android:layout_marginTop="15dp"/>
 
 </LinearLayout>

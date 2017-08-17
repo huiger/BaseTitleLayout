@@ -38,6 +38,7 @@ public class BaseTitleLayout extends View {
     private int rightImg1 = -1, rightImg2 = -1;
     private String rightText = "";
     private Bitmap leftBitmap;
+    private LeftImgVisible mLeftImgVisible = LeftImgVisible.VISIBLE;
 
     private TitleLayoutClickListener listener;
 
@@ -73,7 +74,16 @@ public class BaseTitleLayout extends View {
             } else if (index == R.styleable.BaseTitleLayout_titleLeftImg) {
                 leftImg = typedArray.getResourceId(index, R.drawable.back);
 
-            } else if (index == R.styleable.BaseTitleLayout_titleLeftText1) {
+            } else if (index == R.styleable.BaseTitleLayout_titleLeftImgVisible) {
+                int style = typedArray.getInt(index, LeftImgVisible.VISIBLE.ordinal());
+                for (LeftImgVisible leftImgVisible : LeftImgVisible.values()) {
+                    if(style == leftImgVisible.ordinal()) {
+                        mLeftImgVisible = leftImgVisible;
+                    }
+                }
+
+
+            } else if (index == R.styleable.BaseTitleLayout_titleLeftText) {
                 leftText = typedArray.getString(index);
 
             } else if (index == R.styleable.BaseTitleLayout_titleCenterText) {
@@ -108,17 +118,19 @@ public class BaseTitleLayout extends View {
         super.onDraw(canvas);
         this.mCanvas = canvas;
 
-        leftBitmap = BitmapFactory.decodeResource(getResources(), leftImg);
-        rect.top = layoutHeight / 2 - (iconSize + dp2px(5)) / 2;
-        rect.bottom = layoutHeight / 2 + (iconSize + dp2px(5)) / 2;
-        rect.left = paddingLeft;
-        rect.right = paddingLeft + iconSize;
-        mCanvas.drawBitmap(leftBitmap, null, rect, mPaint);
+        if(mLeftImgVisible == LeftImgVisible.VISIBLE) {
+            leftBitmap = BitmapFactory.decodeResource(getResources(), leftImg);
+            rect.top = layoutHeight / 2 - (iconSize + dp2px(5)) / 2;
+            rect.bottom = layoutHeight / 2 + (iconSize + dp2px(5)) / 2;
+            rect.left = paddingLeft;
+            rect.right = paddingLeft + iconSize;
+            mCanvas.drawBitmap(leftBitmap, null, rect, mPaint);
+        }
 
 
         Paint.FontMetrics fontMetrics = mPaint.getFontMetrics();
-        float textCenterHeight = getHeight() / 2 - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent)/2;
-        
+        float textCenterHeight = getHeight() / 2 - fontMetrics.descent + (fontMetrics.descent - fontMetrics.ascent) / 2;
+
         if (!TextUtils.isEmpty(leftText)) {
             mCanvas.drawText(leftText, paddingLeft + (iconSize + dp2px(5)), textCenterHeight, mPaint);
         }
@@ -224,7 +236,7 @@ public class BaseTitleLayout extends View {
                     listener.onRightTextClickListener();
                 }
             } else if (x < layoutWidth - iconSize - paddingRight && x > layoutWidth - 2 * iconSize - paddingRight) {
-                if(rightImg2 != -1) {
+                if (rightImg2 != -1) {
                     listener.onRightImg2ClickListener();
                 }
             }
@@ -235,5 +247,10 @@ public class BaseTitleLayout extends View {
     private int dp2px(float dp) {
         float scale = getResources().getDisplayMetrics().density;
         return (int) (dp * scale + 0.5f);
+    }
+
+    private enum LeftImgVisible{
+        GONE,
+        VISIBLE
     }
 }
