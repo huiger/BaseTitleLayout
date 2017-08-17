@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.huigeAndroid:BaseTitleLayout:v1.0.1'
+     compile 'com.github.huiger:BaseTitleLayout:v1.0.1'
 }
 ```
 
