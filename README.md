@@ -1,7 +1,7 @@
 # BaseTitleLayout
 
 
-[![](https://jitpack.io/v/huigeAndroid/BaseTitleLayout.svg)](https://jitpack.io/#huigeAndroid/BaseTitleLayout)
+[![](https://jitpack.io/v/huigeAndroid/BaseTitleLayout.svg)](https://jitpack.io/#huiger/BaseTitleLayout)
 
 ## 效果图
 ![效果图](./img/img.png)
@@ -16,7 +16,7 @@ allprojects {
 }
 
 dependencies {
-     compile 'com.github.huigeAndroid:BaseTitleLayout:v1.0.1'
+     compile 'com.github.huiger:BaseTitleLayout:v1.0.1'
 }
 ```
 
